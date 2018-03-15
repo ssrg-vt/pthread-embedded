@@ -1,3 +1,6 @@
 *.o
 *.a
 *.dep
+Makefile
+config.log
+config.status
