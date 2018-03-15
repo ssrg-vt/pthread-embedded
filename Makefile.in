@@ -37,7 +37,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$Q$(AR_FOR_TARGET) $(ARFLAGS_FOR_TARGET) $@ $(OBJS)
 
-install:
+install: all
 	$(INSTALL_DATA) $(NAME) $(NEWLIB)/lib
 
 headers:
