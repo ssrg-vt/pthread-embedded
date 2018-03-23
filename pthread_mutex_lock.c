@@ -76,6 +76,9 @@ pthread_mutex_lock (pthread_mutex_t * mutex)
     }
 
   mx = *mutex;
+  
+  volatile int busy = 0;
+  while(busy++ < 100000);
 
   if (mx->kind == PTHREAD_MUTEX_NORMAL)
     {
