@@ -1,9 +1,9 @@
 #!/bin/bash
 TARGET=x86_64-hermit
-PREFIX=$PWD/../prefix
+PREFIX=/opt/hermit
 
 PATH=$PATH:/opt/hermit/bin
 
 make distclean &> /dev/null
 
-./configure --target=$TARGET --prefix=$PREFIX && make install -j`nproc`
+./configure --target=$TARGET --prefix=$PREFIX && make -j`nproc`
