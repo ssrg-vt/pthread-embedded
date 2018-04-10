@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include <reent.h>
 #include <string.h>
+#include <stdint.h>
 #include <stdatomic.h>
 #include "pte_osal.h"
 #include "pthread.h"
