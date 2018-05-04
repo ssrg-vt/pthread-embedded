@@ -77,6 +77,11 @@ pthread_mutex_lock (pthread_mutex_t * mutex)
 
   mx = *mutex;
 
+  /* FIXME: there is a race condition for migrated pthread programs. This is
+   * not a fix! */
+  volatile int busy = 0;
+  while(busy++ < 100000);
+
   if (mx->kind == PTHREAD_MUTEX_NORMAL)
     {
       if (PTE_ATOMIC_EXCHANGE(
